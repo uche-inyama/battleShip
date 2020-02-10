@@ -1,0 +1,57 @@
+.root {
+  height: 100vh;
+  display: flex;
+  justify-content: space-around;
+}
+
+.grid1 {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-auto-rows: 2em;
+  grid-gap: 1px;
+  padding: 100px 100px;
+  width: 100%;
+}
+.grid2 {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-auto-rows: 2em;
+  grid-gap: 1px;
+  padding: 100px 100px;
+  width: 100%;
+}
+
+.grid-item {
+  border: solid 1px black;
+  font-size: 18px;
+  padding: 10px;
+}
+h1 {
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+
+h1:nth-child(1) {
+  position: relative;
+  right: 120px;
+}
+
+h1:nth-child(3) {
+  position: relative;
+  left: 130px;
+}
+
+.headerWrapper {
+  position: absolute;
+  height: 80px;
+  width: 100%;
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+}
+
+h1:nth-child(2) {
+  width: 35%;
+}
