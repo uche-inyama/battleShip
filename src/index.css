@@ -34,7 +34,7 @@ h1 {
 
 h1:nth-child(1) {
   position: relative;
-  right: 120px;
+  right: 270px;
 }
 
 h1:nth-child(3) {
@@ -54,4 +54,17 @@ h1:nth-child(3) {
 
 h1:nth-child(2) {
   width: 35%;
+}
+
+.acell {
+  pointer-events: none;
+}
+button {
+  width: 50px;
+  height: 20px;
+  margin-right: 20px;
+}
+.row-reverse {
+  display: flex;
+  flex-direction: row-reverse;
 }
