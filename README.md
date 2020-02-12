@@ -8,7 +8,7 @@ The purpose of this project, battleShip is to consolidate a programming paradigm
 - [ ] Object oriented Programming.
 - [ ] The Module Pattern.
 
-To get acquainted with how to play the game - Battleship, try it out [here](http://en.battleship-game.org/)
+To get acquainted with how to play the game - Battleship, try it out [here](http://en.battleship-game.org/).
 
 #### In order to work with this repository take the following steps:
 
