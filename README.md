@@ -1,6 +1,6 @@
 ## TEST DRIVEN DEVELOPMENT - TDD [BATTLESHIP]
 
-The purpose of this project, battleShip is to consolidate a programming paradigm, TDD, that was introduced in Testing practice; an introduction to writing tests in JavaScript. Also, other programming concepts learned from previous modules were reinforced. These includes working with:
+The purpose of this project, **```battleShip```** is to consolidate a programming paradigm, TDD, that was introduced in Testing practice, which is an introduction to writing tests in JavaScript. Also, other programming concepts learned from previous modules were reinforced. These includes working with:
 
 - [ ] Factory functions.
 - [ ] Immediately invoked functions.
