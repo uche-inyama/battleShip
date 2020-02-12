@@ -1,4 +1,4 @@
-## TEST DRIVEN DEVELOPMENT
+## TEST DRIVEN DEVELOPMENT - TDD [BATTLESHIP]
 
 The purpose of building this project, **``BattleShip``** is to consolidate a programming paradigm, TDD, that was introduced in the project, **``Testing Practice``**. Also, other programming concepts learned from previous modules were reinforced. These includes working with:
 
