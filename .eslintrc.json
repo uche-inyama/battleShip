@@ -13,7 +13,7 @@
     "no-shadow": "off",
     "no-param-reassign": "off",
     "eol-last": "off",
-    "comma-dangle": ["error", "always"],
+    "comma-dangle": ["error", "never"],
     "arrow-parens": "off"
   }
 }
