@@ -1,4 +1,3 @@
-import Board from './board/Board';
 import displayShip from './board/displayShip';
 
 const Game = (() => {

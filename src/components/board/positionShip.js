@@ -14,7 +14,8 @@ const placeShip = () => {
         position += 1;
       }
       return cell;
-    } else if (!positionGrid.includes(position) && orientation === 'vertical') {
+    }
+    if (!positionGrid.includes(position) && orientation === 'vertical') {
       if (length === 1) {
         positionGrid.push(position);
         cell.push(position);

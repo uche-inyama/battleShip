@@ -60,6 +60,65 @@ const displayShip = (param = null) => {
 
   let len;
 
+  function callback1(e) {
+    e.preventDefault();
+    if (GameState.won()) {
+      return;
+    }
+    position = e.target.dataset.id;
+    length = e.target.dataset.length;
+    name = e.target.dataset.name;
+    index = e.target.dataset.index;
+    e.target.innerHTML = 'X';
+    if (board.receiveAttack(position, name, index)) {
+      e.target.style = 'background-color: red;';
+    }
+    if (board.AllShipSank()) {
+      GameState.setWinStatus();
+      header2.innerText = 'Human Player won';
+    }
+
+    passEvent();
+  }
+
+  function callback2(e) {
+    e.preventDefault();
+    if (GameState.won()) return;
+    position = e.target.dataset.id;
+    length = e.target.dataset.length;
+    name = e.target.dataset.name;
+    index = e.target.dataset.index;
+
+    e.target.innerHTML = 'X';
+
+    if (board.receiveAttack(position, name, index)) {
+      e.target.style = 'background-color: red;';
+    }
+    if (board.AllShipSank()) {
+      GameState.setWinStatus();
+      header2.innerText = 'Computer has won';
+    }
+  }
+
+  function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min)) + min;
+  }
+
+  function passEvent() {
+    const grid2 = document.querySelector('.grid2');
+    while (true) {
+      const pickedNum = getRandomInt(0, 99);
+      const cell = grid2.querySelector(`.acell-${pickedNum}`);
+      if (randomNumArr.has(pickedNum) === false && cell.innerText !== 'X') {
+        randomNumArr.add(pickedNum);
+        cell.click();
+        break;
+      }
+    }
+  }
+
   if (param === null) {
     const rowDiv = document.createElement('div');
     const headerWrapper = document.createElement('div');
@@ -82,7 +141,7 @@ const displayShip = (param = null) => {
     for (let i = 0; i < 100; i += 1) {
       const rowDiv = document.querySelector('.grid1');
       const divlist = document.createElement('div');
-      divlist.classList.add(`grid-item`, `cell-${i}`);
+      divlist.classList.add('grid-item', `cell-${i}`);
       divlist.setAttribute('data-id', i);
       rowDiv.appendChild(divlist);
     }
@@ -104,30 +163,7 @@ const displayShip = (param = null) => {
     const elems = grid1.querySelectorAll('.grid-item');
     for (let i = 0; i < elems.length; i += 1) {
       // (function() {
-      elems[i].addEventListener(
-        'click',
-        e => {
-          e.preventDefault();
-          if (GameState.won()) {
-            return;
-          }
-          position = e.target.dataset.id;
-          length = e.target.dataset.length;
-          name = e.target.dataset.name;
-          index = e.target.dataset.index;
-          e.target.innerHTML = 'X';
-          if (board.receiveAttack(position, name, index)) {
-            e.target.style = 'background-color: red;';
-          }
-          if (board.AllShipSank()) {
-            GameState.setWinStatus();
-            header2.innerText = 'Human Player won';
-          }
-
-          passEvent();
-        },
-        { once: true }
-      );
+      elems[i].addEventListener('click', callback1, { once: true });
       // })(i);
     }
   } else {
@@ -138,7 +174,7 @@ const displayShip = (param = null) => {
     for (let i = 0; i < 100; i += 1) {
       const rowDiv = document.querySelector('.grid2');
       const divlist = document.createElement('div');
-      divlist.classList.add('grid-item', `acell-${i}`, `acell`);
+      divlist.classList.add('grid-item', `acell-${i}`, 'acell');
       divlist.setAttribute('data-id', i);
       rowDiv.appendChild(divlist);
     }
@@ -162,48 +198,8 @@ const displayShip = (param = null) => {
 
     for (let i = 0; i < elems.length; i += 1) {
       // (function() {
-      elems[i].addEventListener(
-        'click',
-        e => {
-          e.preventDefault();
-          if (GameState.won()) return;
-          position = e.target.dataset.id;
-          length = e.target.dataset.length;
-          name = e.target.dataset.name;
-          index = e.target.dataset.index;
-
-          e.target.innerHTML = 'X';
-
-          if (board.receiveAttack(position, name, index)) {
-            e.target.style = 'background-color: red;';
-          }
-          if (board.AllShipSank()) {
-            GameState.setWinStatus();
-            header2.innerText = 'Computer has won';
-          }
-        },
-        { once: true }
-      );
+      elems[i].addEventListener('click', callback2, { once: true });
       // })(i);
-    }
-  }
-
-  function getRandomInt(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min)) + min;
-  }
-
-  function passEvent() {
-    const grid2 = document.querySelector('.grid2');
-    while (true) {
-      const pickedNum = getRandomInt(0, 99);
-      const cell = grid2.querySelector(`.acell-${pickedNum}`);
-      if (randomNumArr.has(pickedNum) === false && cell.innerText !== 'X') {
-        randomNumArr.add(pickedNum);
-        cell.click();
-        break;
-      }
     }
   }
 };
