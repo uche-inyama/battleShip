@@ -84,10 +84,13 @@ const displayShip = (param = null) => {
     if (GameState.won()) {
       return;
     }
-    position = e.target.dataset.id;
-    length = e.target.dataset.length;
-    name = e.target.dataset.name;
-    index = e.target.dataset.index;
+
+    const { position, name, index } = e.target.dataset;
+
+    // position = e.target.dataset.id;
+    // length = e.target.dataset.length;
+    // name = e.target.dataset.name;
+    // index = e.target.dataset.index;
     e.target.innerHTML = 'X';
     if (board.receiveAttack(position, name, index)) {
       e.target.style = 'background-color: red;';
@@ -103,10 +106,12 @@ const displayShip = (param = null) => {
   function callback2(e) {
     e.preventDefault();
     if (GameState.won()) return;
-    position = e.target.dataset.id;
-    length = e.target.dataset.length;
-    name = e.target.dataset.name;
-    index = e.target.dataset.index;
+
+    const { position, name, index } = e.target.dataset;
+    // position = e.target.dataset.id;
+    // length = e.target.dataset.length;
+    // name = e.target.dataset.name;
+    // index = e.target.dataset.index;
 
     e.target.innerHTML = 'X';
 
