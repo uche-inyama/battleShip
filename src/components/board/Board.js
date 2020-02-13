@@ -29,4 +29,5 @@ class Board {
   }
 }
 
-export { Board as default };
+// export { Board as default };
+export default Board;
