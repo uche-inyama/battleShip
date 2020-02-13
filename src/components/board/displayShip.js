@@ -7,9 +7,7 @@ const displayShip = (param = null) => {
   const root = document.querySelector('.root');
   const resetButton = document.createElement('button');
   resetButton.innerText = 'Reset';
-  let position;
   let name;
-  let index;
   const randomNumArr = new Set();
   const board = new Board([], []);
   resetButton.addEventListener('click', () => {
@@ -87,10 +85,6 @@ const displayShip = (param = null) => {
 
     const { position, name, index } = e.target.dataset;
 
-    // position = e.target.dataset.id;
-    // length = e.target.dataset.length;
-    // name = e.target.dataset.name;
-    // index = e.target.dataset.index;
     e.target.innerHTML = 'X';
     if (board.receiveAttack(position, name, index)) {
       e.target.style = 'background-color: red;';
@@ -108,10 +102,6 @@ const displayShip = (param = null) => {
     if (GameState.won()) return;
 
     const { position, name, index } = e.target.dataset;
-    // position = e.target.dataset.id;
-    // length = e.target.dataset.length;
-    // name = e.target.dataset.name;
-    // index = e.target.dataset.index;
 
     e.target.innerHTML = 'X';
 
@@ -167,9 +157,7 @@ const displayShip = (param = null) => {
     const grid1 = document.querySelector('.grid1');
     const elems = grid1.querySelectorAll('.grid-item');
     for (let i = 0; i < elems.length; i += 1) {
-      // (function() {
       elems[i].addEventListener('click', callback1, { once: true });
-      // })(i);
     }
   } else {
     const rowDiv = document.createElement('div');
@@ -201,9 +189,7 @@ const displayShip = (param = null) => {
     const elems = grid2.querySelectorAll('.grid-item');
 
     for (let i = 0; i < elems.length; i += 1) {
-      // (function() {
       elems[i].addEventListener('click', callback2, { once: true });
-      // })(i);
     }
   }
 };
