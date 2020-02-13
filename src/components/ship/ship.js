@@ -3,7 +3,7 @@ const Ship = (length, name) => {
 
   const isSunk = () => hitPositions.every(currentValue => currentValue === 1);
 
-  const hit = (index, args = null) => {
+  const hit = index => {
     hitPositions[index] = 1;
     return hitPositions;
   };
