@@ -1,5 +1,5 @@
 const Ship = (length, name) => {
-  let hitPositions = Array(length).fill(0);
+  const hitPositions = Array(length).fill(0);
 
   const isSunk = () => hitPositions.every(currentValue => currentValue === 1);
 

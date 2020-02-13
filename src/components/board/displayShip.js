@@ -10,7 +10,7 @@ const displayShip = (param = null) => {
   let position;
   let name;
   let index;
-  let randomNumArr = new Set();
+  const randomNumArr = new Set();
   const board = new Board([], []);
   resetButton.addEventListener('click', () => {
     location.reload();
@@ -20,23 +20,23 @@ const displayShip = (param = null) => {
   let header2;
   let header3;
 
-  let battle0 = ship(4, 'ship0');
-  let battle1 = ship(2, 'ship1');
-  let battle2 = ship(3, 'ship2');
-  let battle3 = ship(1, 'ship3');
-  let battle4 = ship(5, 'ship4');
-  let battle5 = ship(3, 'ship5');
-  let battle6 = ship(4, 'ship6');
+  const battle0 = ship(4, 'ship0');
+  const battle1 = ship(2, 'ship1');
+  const battle2 = ship(3, 'ship2');
+  const battle3 = ship(1, 'ship3');
+  const battle4 = ship(5, 'ship4');
+  const battle5 = ship(3, 'ship5');
+  const battle6 = ship(4, 'ship6');
 
   board.ships = [battle0, battle1, battle2, battle3, battle4, battle5, battle6];
 
-  let position0 = placeShip().positionShip(battle0.length, 'vertical', 9);
-  let position1 = placeShip().positionShip(battle1.length, 'vertical', 2);
-  let position2 = placeShip().positionShip(battle2.length, 'vertical', 10);
-  let position3 = placeShip().positionShip(battle3.length, 'vertical', 7);
-  let position4 = placeShip().positionShip(battle4.length, 'vertical', 5);
-  let position5 = placeShip().positionShip(battle5.length, 'horizontal', 94);
-  let position6 = placeShip().positionShip(battle6.length, 'horizontal', 71);
+  const position0 = placeShip().positionShip(battle0.length, 'vertical', 9);
+  const position1 = placeShip().positionShip(battle1.length, 'vertical', 2);
+  const position2 = placeShip().positionShip(battle2.length, 'vertical', 10);
+  const position3 = placeShip().positionShip(battle3.length, 'vertical', 7);
+  const position4 = placeShip().positionShip(battle4.length, 'vertical', 5);
+  const position5 = placeShip().positionShip(battle5.length, 'horizontal', 94);
+  const position6 = placeShip().positionShip(battle6.length, 'horizontal', 71);
 
   board.shipPositions = [
     ...position0,
@@ -48,7 +48,7 @@ const displayShip = (param = null) => {
     ...position6
   ];
 
-  const shipArr_Arr = [
+  const shipArrOfArr = [
     position0,
     position1,
     position2,
@@ -62,7 +62,7 @@ const displayShip = (param = null) => {
 
   if (param === null) {
     const rowDiv = document.createElement('div');
-    let headerWrapper = document.createElement('div');
+    const headerWrapper = document.createElement('div');
     headerWrapper.classList.add('headerWrapper');
     header1 = document.createElement('h1');
     header1.setAttribute('class', 'row-reverse');
@@ -75,11 +75,11 @@ const displayShip = (param = null) => {
     header1.appendChild(resetButton);
     headerWrapper.append(header1, header2, header3);
 
-    rowDiv.setAttribute('class', `grid1`);
+    rowDiv.setAttribute('class', 'grid1');
     root.append(headerWrapper);
 
     root.append(rowDiv);
-    for (let i = 0; i < 100; i++) {
+    for (let i = 0; i < 100; i += 1) {
       const rowDiv = document.querySelector('.grid1');
       const divlist = document.createElement('div');
       divlist.classList.add(`grid-item`, `cell-${i}`);
@@ -87,7 +87,7 @@ const displayShip = (param = null) => {
       rowDiv.appendChild(divlist);
     }
 
-    shipArr_Arr.forEach((arr, index) => {
+    shipArrOfArr.forEach((arr, index) => {
       len = arr.length;
       name = `ship${index}`;
       arr.forEach((ele, index1) => {
@@ -102,48 +102,48 @@ const displayShip = (param = null) => {
 
     const grid1 = document.querySelector('.grid1');
     const elems = grid1.querySelectorAll('.grid-item');
-    for (let i = 0; i < elems.length; i++) {
-      (function() {
-        elems[i].addEventListener(
-          'click',
-          function(e) {
-            e.preventDefault();
-            if (GameState.won()) {
-              return;
-            }
-            position = e.target.dataset.id;
-            length = e.target.dataset.length;
-            name = e.target.dataset.name;
-            index = e.target.dataset.index;
-            e.target.innerHTML = 'X';
-            if (board.receiveAttack(position, name, index)) {
-              e.target.style = 'background-color: red;';
-            }
-            if (board.AllShipSank()) {
-              GameState.setWinStatus();
-              header2.innerText = `Human Player won`;
-            }
+    for (let i = 0; i < elems.length; i += 1) {
+      // (function() {
+      elems[i].addEventListener(
+        'click',
+        e => {
+          e.preventDefault();
+          if (GameState.won()) {
+            return;
+          }
+          position = e.target.dataset.id;
+          length = e.target.dataset.length;
+          name = e.target.dataset.name;
+          index = e.target.dataset.index;
+          e.target.innerHTML = 'X';
+          if (board.receiveAttack(position, name, index)) {
+            e.target.style = 'background-color: red;';
+          }
+          if (board.AllShipSank()) {
+            GameState.setWinStatus();
+            header2.innerText = 'Human Player won';
+          }
 
-            passEvent();
-          },
-          { once: true }
-        );
-      })(i);
+          passEvent();
+        },
+        { once: true }
+      );
+      // })(i);
     }
   } else {
     const rowDiv = document.createElement('div');
-    let header2 = document.querySelector('.header2');
-    rowDiv.setAttribute('class', `grid2`);
+    const header2 = document.querySelector('.header2');
+    rowDiv.setAttribute('class', 'grid2');
     root.append(rowDiv);
-    for (let i = 0; i < 100; i++) {
+    for (let i = 0; i < 100; i += 1) {
       const rowDiv = document.querySelector('.grid2');
       const divlist = document.createElement('div');
-      divlist.classList.add(`grid-item`, `acell-${i}`, `acell`);
+      divlist.classList.add('grid-item', `acell-${i}`, `acell`);
       divlist.setAttribute('data-id', i);
       rowDiv.appendChild(divlist);
     }
 
-    shipArr_Arr.forEach((arr, index) => {
+    shipArrOfArr.forEach((arr, index) => {
       len = arr.length;
       name = `ship${index}`;
       arr.forEach((ele, index1) => {
@@ -157,34 +157,34 @@ const displayShip = (param = null) => {
       });
     });
 
-    let grid2 = document.querySelector('.grid2');
+    const grid2 = document.querySelector('.grid2');
     const elems = grid2.querySelectorAll('.grid-item');
 
-    for (let i = 0; i < elems.length; i++) {
-      (function() {
-        elems[i].addEventListener(
-          'click',
-          function(e) {
-            e.preventDefault();
-            if (GameState.won()) return;
-            position = e.target.dataset.id;
-            length = e.target.dataset.length;
-            name = e.target.dataset.name;
-            index = e.target.dataset.index;
+    for (let i = 0; i < elems.length; i += 1) {
+      // (function() {
+      elems[i].addEventListener(
+        'click',
+        e => {
+          e.preventDefault();
+          if (GameState.won()) return;
+          position = e.target.dataset.id;
+          length = e.target.dataset.length;
+          name = e.target.dataset.name;
+          index = e.target.dataset.index;
 
-            e.target.innerHTML = 'X';
+          e.target.innerHTML = 'X';
 
-            if (board.receiveAttack(position, name, index)) {
-              e.target.style = 'background-color: red;';
-            }
-            if (board.AllShipSank()) {
-              GameState.setWinStatus();
-              header2.innerText = 'Computer has won';
-            }
-          },
-          { once: true }
-        );
-      })(i);
+          if (board.receiveAttack(position, name, index)) {
+            e.target.style = 'background-color: red;';
+          }
+          if (board.AllShipSank()) {
+            GameState.setWinStatus();
+            header2.innerText = 'Computer has won';
+          }
+        },
+        { once: true }
+      );
+      // })(i);
     }
   }
 
@@ -194,7 +194,7 @@ const displayShip = (param = null) => {
     return Math.floor(Math.random() * (max - min)) + min;
   }
 
-  const passEvent = () => {
+  function passEvent() {
     const grid2 = document.querySelector('.grid2');
     while (true) {
       const pickedNum = getRandomInt(0, 99);
@@ -205,6 +205,6 @@ const displayShip = (param = null) => {
         break;
       }
     }
-  };
+  }
 };
 export default displayShip;
