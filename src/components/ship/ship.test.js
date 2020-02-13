@@ -1,4 +1,4 @@
-const Ship = require('./ship');
+import Ship from './ship';
 
 it('checks if ship, is sinking', () => {
   expect(Ship(2).isSunk()).toBe(false);

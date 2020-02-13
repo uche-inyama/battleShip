@@ -36,4 +36,4 @@ const placeShip = () => {
   };
 };
 
-module.exports = placeShip;
+export { placeShip as default };

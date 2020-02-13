@@ -1,6 +1,6 @@
-const Board = require('./Board');
-const ship = require('../ship/ship');
-const placeShip = require('./positionShip');
+import Board from './Board';
+import ship from '../ship/ship';
+import placeShip from './positionShip';
 
 it('checks if All the ships on the board has sank', () => {
   let battle0 = ship(4, 'ship0');
