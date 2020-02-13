@@ -60,6 +60,25 @@ const displayShip = (param = null) => {
 
   let len;
 
+  function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min)) + min;
+  }
+
+  function passEvent() {
+    const grid2 = document.querySelector('.grid2');
+    while (true) {
+      const pickedNum = getRandomInt(0, 99);
+      const cell = grid2.querySelector(`.acell-${pickedNum}`);
+      if (randomNumArr.has(pickedNum) === false && cell.innerText !== 'X') {
+        randomNumArr.add(pickedNum);
+        cell.click();
+        break;
+      }
+    }
+  }
+
   function callback1(e) {
     e.preventDefault();
     if (GameState.won()) {
@@ -97,25 +116,6 @@ const displayShip = (param = null) => {
     if (board.AllShipSank()) {
       GameState.setWinStatus();
       header2.innerText = 'Computer has won';
-    }
-  }
-
-  function getRandomInt(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min)) + min;
-  }
-
-  function passEvent() {
-    const grid2 = document.querySelector('.grid2');
-    while (true) {
-      const pickedNum = getRandomInt(0, 99);
-      const cell = grid2.querySelector(`.acell-${pickedNum}`);
-      if (randomNumArr.has(pickedNum) === false && cell.innerText !== 'X') {
-        randomNumArr.add(pickedNum);
-        cell.click();
-        break;
-      }
     }
   }
 
@@ -168,7 +168,6 @@ const displayShip = (param = null) => {
     }
   } else {
     const rowDiv = document.createElement('div');
-    const header2 = document.querySelector('.header2');
     rowDiv.setAttribute('class', 'grid2');
     root.append(rowDiv);
     for (let i = 0; i < 100; i += 1) {
