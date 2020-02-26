@@ -10,7 +10,7 @@ The purpose of this project, **```battleShip```** is to consolidate a programmin
 
 To get acquainted with how to play the game - Battleship, try it out [here](http://en.battleship-game.org/).
 
-Here's the [live link](https://uche-inyama.github.io/battleShip/)
+Here's the [live link](https://uche-inyama.github.io/battleShip/) of my battleShip
 
 #### In order to work with this repository take the following steps:
 
