@@ -1,7 +1,13 @@
 .root {
   height: 100vh;
+  width: 100%;
   display: flex;
   justify-content: space-around;
+  background-image: url('./images/battleShip.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
 }
 
 .grid1 {
@@ -22,24 +28,27 @@
 }
 
 .grid-item {
-  border: solid 1px black;
+  border: solid 1.5px black;
   font-size: 18px;
   padding: 10px;
 }
 h1 {
+  color: #000;
+  font-size: 1.2rem;
+  font-weight: 700;
   position: relative;
   text-align: center;
   width: 100%;
 }
 
 h1:nth-child(1) {
-  position: relative;
-  right: 270px;
+  position: absolute;
+  right: 990px;
 }
 
 h1:nth-child(3) {
-  position: relative;
-  left: 130px;
+  position: fixed;
+  left: 490px;
 }
 
 .headerWrapper {
