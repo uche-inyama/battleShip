@@ -8,7 +8,14 @@ The purpose of this project, **```battleShip```** is to consolidate a programmin
 - [ ] Object oriented Programming.
 - [ ] The Module Pattern.
 
+## Built With
+
+- JavaScript,
+- HTML,
+- CSS
+
 To get acquainted with how to play the game - Battleship, try it out [here](http://en.battleship-game.org/).
+
 
 #### In order to work with this repository take the following steps:
 
@@ -23,3 +30,41 @@ To get acquainted with how to play the game - Battleship, try it out [here](http
 
 - Inyama, Uchechukwu Henry.
 - RajaSekhar
+
+# Project Name: Catalogue of Recipes
+
+
+> Catalogue of Recipes is an application that shows a list of recipes, it has a details page that shows
+> how to prepare each recipe. The items can be filtered by ingredients (shrimp, broccoli, etc.)
+
+![Screenshot](https://user-images.githubusercontent.com/46329537/84108147-6b562980-aa17-11ea-9d55-365c0b811cbf.png)
+
+Additional description about the project and its features.
+
+
+
+## Live Demo
+
+[Live Demo Link](https://uche-inyama.github.io/battleShip/)
+
+
+## Author
+
+👤 **Inyama, Uchechukwu Henry**
+
+- Github: [@githubhandle](https://github.com/uche-inyama)
+- Twitter: [@twitterhandle](https://twitter.com/euuoc)
+- Linkedin: [linkedin](https://www.linkedin.com/in/uchechukwu-inyama-b3429a105/)
+
+## 🤝 Contributing
+
+Contributions, issues and feature requests are welcome!
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## 📝 License
+
+This project is [MIT](lic.url) licensed.
+
