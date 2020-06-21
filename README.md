@@ -39,11 +39,12 @@ To get acquainted with how to play the game - Battleship, try it out [here](http
 
 👤 **Inyama, Uchechukwu Henry**
 
-👤 **RajaSekhar**
-
 - Github: [@githubhandle](https://github.com/uche-inyama)
 - Twitter: [@twitterhandle](https://twitter.com/euuoc)
 - Linkedin: [linkedin](https://www.linkedin.com/in/uchechukwu-inyama-b3429a105/)
+
+👤 **RajaSekhar**
+
 
 ## 🤝 Contributing
 
