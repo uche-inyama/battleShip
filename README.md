@@ -1,5 +1,7 @@
 ## TEST DRIVEN DEVELOPMENT - TDD [BATTLESHIP]
 
+![Screenshot from 2020-06-21 20-02-44](https://user-images.githubusercontent.com/46329537/85232850-45a72800-b3fa-11ea-9c5d-cde4695df960.png)
+
 The purpose of this project, **```battleShip```** is to consolidate a programming paradigm, TDD, that was introduced in Testing practice, which is an introduction to writing tests in JavaScript. Also, other programming concepts learned from previous modules were reinforced. These includes working with:
 
 - [ ] Factory functions.
@@ -26,21 +28,6 @@ To get acquainted with how to play the game - Battleship, try it out [here](http
   - Accessing the html file in the dist folder, then right click on it and choose a browser.
   - If you are using VS code, go to the bottom of the editor and click on Go Live to launch the application.
 
-  ### Contributors:
-
-- Inyama, Uchechukwu Henry.
-- RajaSekhar
-
-# Project Name: Catalogue of Recipes
-
-
-> Catalogue of Recipes is an application that shows a list of recipes, it has a details page that shows
-> how to prepare each recipe. The items can be filtered by ingredients (shrimp, broccoli, etc.)
-
-![Screenshot](https://user-images.githubusercontent.com/46329537/84108147-6b562980-aa17-11ea-9d55-365c0b811cbf.png)
-
-Additional description about the project and its features.
-
 
 
 ## Live Demo
@@ -51,6 +38,8 @@ Additional description about the project and its features.
 ## Author
 
 👤 **Inyama, Uchechukwu Henry**
+
+👤 **RajaSekhar**
 
 - Github: [@githubhandle](https://github.com/uche-inyama)
 - Twitter: [@twitterhandle](https://twitter.com/euuoc)
