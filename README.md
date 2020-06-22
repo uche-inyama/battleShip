@@ -18,8 +18,9 @@ The purpose of this project, **```battleShip```** is to consolidate a programmin
 
 To get acquainted with how to play the game - Battleship, try it out [here](http://en.battleship-game.org/).
 
+## Getting Started
 
-#### In order to work with this repository take the following steps:
+To get the local copy up and running follow these simple example steps.
 
 - Clone the repository with the url **`git@github.com:uche-inyama/battleShip.git`**
 - **cd** into the repository, run: **`npm install`** to install the dependencies, then run: **`npm run dev-watch`**.
